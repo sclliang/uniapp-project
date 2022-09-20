@@ -60,7 +60,6 @@ export default {
   onLoad(options) {
     // 获取当前手机设备信息
     const phone = uni.getSystemInfoSync();
-    console.log(phone);
     this.wh = phone.windowHeight - 50;
     this.getCateList();
   },

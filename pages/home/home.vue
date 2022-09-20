@@ -137,7 +137,6 @@ export default {
         });
       });
       this.floorList = res.message;
-      console.log(this.floorList);
     },
     // 搜索框点击事件
     handleSearchClick() {
