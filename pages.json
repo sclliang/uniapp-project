@@ -32,17 +32,23 @@
 		"root": "subpkg",
 		"pages": [
 
-		{
-                    "path" : "goods_detail/goods_detail",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-                ,{
-                    "path" : "goods_list/goods_list",
+			{
+				"path": "goods_detail/goods_detail",
+				"style": {
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "goods_list/goods_list",
+				"style": {
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false
+				}
+
+			}
+		    ,{
+                    "path" : "search/search",
                     "style" :                                                                                    
                 {
                     "navigationBarTitleText": "",
@@ -60,6 +66,8 @@
 		"app-plus": {
 			"background": "#efeff4"
 		}
+
+
 	},
 	"tabBar": {
 		"selectedColor": "#c00000",

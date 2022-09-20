@@ -2,6 +2,7 @@
 
 <template>
   <view>
+    <my-search @click="handleSearchClick"></my-search>
     <view class="scroll-view-container">
       <!-- 左边区域 -->
       <scroll-view
@@ -60,7 +61,7 @@ export default {
     // 获取当前手机设备信息
     const phone = uni.getSystemInfoSync();
     console.log(phone);
-    this.wh = phone.windowHeight;
+    this.wh = phone.windowHeight - 50;
     this.getCateList();
   },
   methods: {
@@ -76,7 +77,7 @@ export default {
       this.cateList = res.message;
       // 二级分类赋值
       this.cateLevel = res.message[0].children;
-      console.log(this.cateLevel);
+      // console.log(this.cateLevel);
     },
     // 商品点击事件
     handleGoodsItemClick(item) {
@@ -84,11 +85,17 @@ export default {
         url: "/subpkg/goods_list/goods_list?cid=" + item.cat_id,
       });
     },
+    // 搜索框点击事件
+    handleSearchClick() {
+      uni.navigateTo({
+        url: "/subpkg/search/search",
+      });
+    },
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .scroll-view-container {
   display: flex;
   // flex-direction: column;

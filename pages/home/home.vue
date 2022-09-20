@@ -1,5 +1,8 @@
 <template>
   <view class="container-home">
+    <view class="search-box"
+      ><my-search @click="handleSearchClick"></my-search
+    ></view>
     <!-- 轮播图 -->
     <uni-swiper-dot
       :info="swiperList"
@@ -136,6 +139,12 @@ export default {
       this.floorList = res.message;
       console.log(this.floorList);
     },
+    // 搜索框点击事件
+    handleSearchClick() {
+      uni.navigateTo({
+        url: "/subpkg/search/search",
+      });
+    },
   },
 };
 </script>
@@ -191,6 +200,11 @@ export default {
         // padding: 0 10rpx;
       }
     }
+  }
+  .search-box {
+    position: sticky;
+    top: 0;
+    z-index: 999;
   }
 }
 </style>
